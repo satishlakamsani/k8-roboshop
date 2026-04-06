@@ -33,7 +33,7 @@ metadata:
    labels: 
     project: roboshop
     tier: db
-    component: frontend
+    component: mongodb
 
 spec: 
    selector: 
