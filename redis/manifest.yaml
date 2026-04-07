@@ -17,23 +17,36 @@ spec:
         tier: db
         component: redis
       #pods are creating here.pods is subset of replicaset
-      template:
+     template:
         metadata:
          labels: 
            project: roboshop
            tier: db 
            component: redis
         spec:
-          selector: 
-            # labels are used as selectors
-           project: roboshop
-           tier: db
-           component: redis
-          ports:
-          - protocol: TCP
-            port: 6379 # servie port
-            targetPort: 6379 # container port
+          containers: 
+          - name: redis
+            image: redis:7.0
 
-    
 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  namespace: roboshop
+  labels:
+    project: roboshop
+    tier: db
+    component: redis
+spec:
+  selector:
+    # labels are used as selectors
+    project: roboshop
+    tier: db
+    component: redis
+  ports:
+  - protocol: TCP
+    port: 6379 # servie port
+    targetPort: 6379 # container port
        
