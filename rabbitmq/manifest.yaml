@@ -61,5 +61,5 @@ spec:
     component: rabbitmq
   ports:
   - protocol: TCP
-    port: 3306 # servie port
-    targetPort: 3306 # container port
+    port: 5672 # servie port
+    targetPort: 5672 # container port
