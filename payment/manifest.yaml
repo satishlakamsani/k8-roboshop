@@ -41,6 +41,7 @@ spec:
         project: roboshop
         tier: backend
         component: payment
+        cs
     spec:
       containers:
       - name: payment
